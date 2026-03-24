@@ -1,1 +1,319 @@
-!doctype html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kairos Language Institute</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Alice&display=swap" rel="stylesheet">
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Alice', serif;
+    background: white;
+}
+
+/* NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    background: white;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.nav-links a {
+    margin: 0 20px;
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    position: relative;
+}
+
+/* underline active page */
+.nav-links a.active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 1px;
+    background: black;
+}
+
+/* HERO */
+.hero {
+    background: #1f6796;
+    color: white;
+    position: relative;
+    padding: 80px 50px 300px 50px;
+    border-bottom-left-radius: 120% 220px;
+    border-bottom-right-radius: 160% 380px;
+    box-shadow: 0 55px 90px rgba(0,0,0,0.5);
+    overflow: hidden;
+}
+
+.hero-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hero-text h1 {
+    font-family: 'Alfa Slab One', serif;
+    font-size: 65px;
+    line-height: 1.1;
+}
+
+.hero-text .kairos {
+    color: black;
+}
+
+.hero-text p {
+    color: black;
+    max-width: 400px;
+}
+
+.hero img {
+    width: 320px;
+}
+
+.cta {
+    position: absolute;
+    right: 60px;
+    bottom: 120px;
+    text-align: right;
+}
+
+.cta h2 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.register-btn {
+    background: #8B0000;
+    color: white;
+    padding: 12px 35px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-family: 'Alice', serif;
+}
+
+/* WHY SECTION */
+.why-section {
+    background: white;
+    padding: 120px 50px 80px 50px;
+    text-align: center;
+}
+
+.why-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 32px;
+    margin-bottom: 60px;
+    text-align: left;
+}
+
+.black { color: black; }
+.k { color: #6D0101; }
+.airos { color: #1268A3; }
+
+.cards {
+    display: flex;
+    justify-content: center;
+    gap: 70px;
+    flex-wrap: wrap;
+}
+
+.card {
+    width: 280px;
+    height: 360px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.card img {
+    width: 180px;
+    margin-bottom: 20px;
+}
+
+.card p {
+    font-family: 'Alice', serif;
+    font-size: 18px;
+}
+/* WELCOME SECTION */
+.welcome-section {
+    position: relative;
+    background: #CAD4EA;
+
+    width: 120vw; /* extend beyond screen */
+    height: 1000px; /* taller to stretch shape */
+
+    margin-left: -10vw; /* pull left to hit edge */
+    margin-top: 180px;
+
+    transform: rotate(174.71deg);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.welcome-content {
+    display: flex;
+    gap: 80px;
+    align-items: center;
+
+    transform: rotate(-174.71deg);
+
+    padding: 80px 120px; /* more breathing space */
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.welcome-image {
+    flex: 0 0 523px; /* fixed image width */
+}
+
+.welcome-image img {
+    width: 523px;
+    height: 785px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.welcome-text {
+    flex: 1;
+}
+
+.welcome-heading {
+    font-family: 'Alfa Slab One', serif;
+    font-size: 28px; /* smaller */
+    font-weight: 400; /* thinner */
+    color: black;
+    margin: 0 0 10px 0;
+}
+
+.welcome-kairos {
+    font-family: 'Alfa Slab One', serif;
+    font-size: 52px;
+    margin: 0 0 20px 0;
+}
+
+.welcome-kairos .k { color: #6D0101; }
+.welcome-kairos .l { color: #6D0101; }
+.welcome-kairos .airos { color: #1268A3; }
+.welcome-kairos .language { color: #1268A3; }
+.welcome-kairos .institute { color: black; }
+
+.welcome-paragraph {
+    font-family: 'Alice', serif;
+    font-size: 18px;
+    width: 858.57px;
+    height: 395.68px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.team-cta {
+    font-size: 22px;
+    color: black;
+    margin-bottom: 15px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="navbar">
+    <img src="logo.png" height="50">
+    <div class="nav-links">
+        <a href="#" class="active">Home</a>
+        <a href="#">About us</a>
+        <a href="#">Careers</a>
+        <a href="#">Contact us</a>
+    </div>
+</div>
+
+<div class="hero">
+    <div class="hero-content">
+        <div class="hero-text">
+            <h1>AT <span class="kairos">KAIROS</span><br>LANGUAGE<br>INSTITUTE</h1>
+            <p>Learn English the smart way with – where digital learning meets real results.</p>
+        </div>
+
+        <img src="student.png">
+    </div>
+
+    <div class="cta">
+        <h2>WE OPEN DOORS<br>THROUGH ENGLISH</h2>
+        <button class="register-btn" onclick="registerNow()">REGISTER</button>
+    </div>
+</div>
+
+<section class="why-section">
+    <h2 class="why-title">
+        <span class="black">WHY CHOOSE </span>
+        <span class="k">K</span><span class="airos">AIROS</span>?
+    </h2>
+
+    <div class="cards">
+        <div class="card">
+            <img src="img1.png" alt="Graphic 1">
+            <p>Engaging, Interactive Lessons</p>
+        </div>
+
+        <div class="card">
+            <img src="img2.png" alt="Graphic 2">
+            <p>Expert Guidance</p>
+        </div>
+
+        <div class="card">
+            <img src="img3.png" alt="Graphic 3">
+            <p>Real Life Confidence</p>
+        </div>
+    </div>
+</section>
+
+<!-- WELCOME SECTION -->
+<section class="welcome-section">
+    <div class="welcome-content">
+        <div class="welcome-image">
+            <img src="your-image.png" alt="Team or Student">
+        </div>
+
+        <div class="welcome-text">
+            <h2 class="welcome-heading">WELCOME TO</h2>
+            <h1 class="welcome-kairos">
+                <span class="k">K</span><span class="airos">AIROS </span><span class="l">L</span><span class="language">ANGUAGE </span><span class="institute">INSTITUTE</span>
+            </h1>
+            <p class="welcome-paragraph">
+                At Kairos Language Institute, we believe that learning a new language opens doors to endless opportunities. Our engaging programs and expert instructors ensure every student gains confidence<br>and fluency in a supportive environment. Join us today and start your journey toward global communication!
+            </p>
+            <h3 class="team-cta">Looking to join our team?</h3>
+            <button class="register-btn" onclick="applyNow()">Apply Now</button>
+        </div>
+    </div>
+</section>
+
+<script>
+function registerNow() {
+    window.location.href = "register.html";
+}
+
+function applyNow() {
+    window.location.href = "apply.html";
+}
+</script>
+
+</body>
+</html>
