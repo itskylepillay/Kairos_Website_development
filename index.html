@@ -12,6 +12,8 @@ body {
     margin: 0;
     font-family: 'Alice', serif;
     background: white;
+    overflow-x: hidden;
+    padding-top: 80px; /* space for fixed navbar */
 }
 
 /* NAVBAR */
@@ -19,17 +21,29 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 50px;
+    padding: 15px 30px; /* reduced padding to fit all links */
     background: white;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: top 0.3s ease;
+    box-sizing: border-box;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px; /* space between links */
+    flex-wrap: nowrap; /* no wrapping, keeps them in one line */
 }
 
 .nav-links a {
-    margin: 0 20px;
     text-decoration: none;
     color: black;
     font-size: 18px;
     position: relative;
+    white-space: nowrap; /* prevent text from breaking */
 }
 
 /* underline active page */
@@ -43,7 +57,7 @@ body {
     background: black;
 }
 
-/* HERO */
+/* HERO SECTION */
 .hero {
     background: #1f6796;
     color: white;
@@ -105,7 +119,7 @@ body {
 /* WHY SECTION */
 .why-section {
     background: white;
-    padding: 120px 50px 80px 50px;
+    padding: 180px 50px 120px 50px; /* more spacing from hero */
     text-align: center;
 }
 
@@ -149,19 +163,16 @@ body {
     font-family: 'Alice', serif;
     font-size: 18px;
 }
-/* WELCOME SECTION */
+
+/* WELCOME SECTION - SLANTED BACKGROUND WITH UPRIGHT TEXT */
 .welcome-section {
     position: relative;
     background: #CAD4EA;
-
-    width: 120vw; /* extend beyond screen */
-    height: 1000px; /* taller to stretch shape */
-
-    margin-left: -10vw; /* pull left to hit edge */
-    margin-top: 180px;
-
-    transform: rotate(174.71deg);
-
+    width: 120vw;
+    height: 1000px;
+    margin-left: -10vw;
+    margin-top: 120px;
+    transform: rotate(6deg); /* slight slant */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -172,16 +183,14 @@ body {
     display: flex;
     gap: 80px;
     align-items: center;
-
-    transform: rotate(-174.71deg);
-
-    padding: 80px 120px; /* more breathing space */
+    transform: rotate(-6deg); /* keeps text upright */
+    padding: 80px 120px;
     width: 100%;
     box-sizing: border-box;
 }
 
 .welcome-image {
-    flex: 0 0 523px; /* fixed image width */
+    flex: 0 0 523px;
 }
 
 .welcome-image img {
@@ -197,8 +206,8 @@ body {
 
 .welcome-heading {
     font-family: 'Alfa Slab One', serif;
-    font-size: 28px; /* smaller */
-    font-weight: 400; /* thinner */
+    font-size: 28px;
+    font-weight: 400;
     color: black;
     margin: 0 0 10px 0;
 }
@@ -218,8 +227,7 @@ body {
 .welcome-paragraph {
     font-family: 'Alice', serif;
     font-size: 18px;
-    width: 858.57px;
-    height: 395.68px;
+    width: 858px;
     line-height: 1.6;
     margin-bottom: 20px;
 }
@@ -229,11 +237,28 @@ body {
     color: black;
     margin-bottom: 15px;
 }
+
+/* RESPONSIVE NAVBAR */
+@media (max-width: 1200px) {
+    .nav-links {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 900px) {
+    .nav-links {
+        gap: 15px;
+    }
+    .navbar {
+        padding: 15px 20px;
+    }
+}
 </style>
 </head>
 
 <body>
 
+<!-- NAVBAR -->
 <div class="navbar">
     <img src="logo.png" height="50">
     <div class="nav-links">
@@ -244,13 +269,13 @@ body {
     </div>
 </div>
 
+<!-- HERO -->
 <div class="hero">
     <div class="hero-content">
         <div class="hero-text">
             <h1>AT <span class="kairos">KAIROS</span><br>LANGUAGE<br>INSTITUTE</h1>
             <p>Learn English the smart way with – where digital learning meets real results.</p>
         </div>
-
         <img src="student.png">
     </div>
 
@@ -260,6 +285,7 @@ body {
     </div>
 </div>
 
+<!-- WHY CHOOSE SECTION -->
 <section class="why-section">
     <h2 class="why-title">
         <span class="black">WHY CHOOSE </span>
@@ -271,12 +297,10 @@ body {
             <img src="img1.png" alt="Graphic 1">
             <p>Engaging, Interactive Lessons</p>
         </div>
-
         <div class="card">
             <img src="img2.png" alt="Graphic 2">
             <p>Expert Guidance</p>
         </div>
-
         <div class="card">
             <img src="img3.png" alt="Graphic 3">
             <p>Real Life Confidence</p>
@@ -313,7 +337,20 @@ function registerNow() {
 function applyNow() {
     window.location.href = "apply.html";
 }
-</script>
 
+/* NAVBAR SCROLL UP/HIDE */
+let lastScrollTop = 0;
+const navbar = document.querySelector('.navbar');
+
+window.addEventListener('scroll', function () {
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    if (scrollTop > lastScrollTop) {
+        navbar.style.top = "-100px"; // hide
+    } else {
+        navbar.style.top = "0"; // show
+    }
+    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+});
+</script>
 </body>
 </html>
