@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Alice&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Alike&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<style>
+body {
+    margin: 0;
+    font-family: 'Alice', serif;
+    background: white;
+    overflow-x: hidden;
+    padding-top: 80px; 
+}
+
+/* NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px; 
+    background: white;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: top 0.3s ease;
+    box-sizing: border-box;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px; 
+    flex-wrap: nowrap; 
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    position: relative;
+    white-space: nowrap; 
+}
+
+/* underline active page */
+.nav-links a.active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 1px;
+    background: black;
+	
+	
+}
+/* RESPONSIVE NAVBAR */
+@media (max-width: 1200px) {
+    .nav-links {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 900px) {
+    .nav-links {
+        gap: 15px;
+    }
+    .navbar {
+        padding: 15px 20px;
+    }
+}
+
+/* HERO */
+.hero {
+    background: #6D0101;
+    color: white;
+    padding: 100px 60px;
+    border-bottom-left-radius: 50% 20%;
+    border-bottom-right-radius: 50% 20%;
+}
+
+.hero h1 {
+    font-family: 'Alfa Slab One', cursive;
+    font-size: 45px;
+}
+
+.hero span {
+    color: black;
+}
+
+.hero h2 {
+    margin-top: 20px;
+    font-size: 24px;
+	  font-family: 'Alike';
+}
+
+.hero p {
+    max-width: 500px;
+	font-family: 'Alike';
+}
+
+/* FEATURES */
+.features {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.at-kairos {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 35px;
+	 font-weight: 400;
+}
+
+.at-kairos .at {
+    color: black;
+}
+
+.at-kairos .k {
+    color: #6D0101; 
+}
+
+.at-kairos .airos {
+    color: #1268A3; 
+}
+
+.at-kairos .text {
+    color: black;
+}
+
+
+.cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;   
+    gap: 55px;
+    max-width: 700px;
+    margin: 60px auto;
+}
+
+.card {
+    width: 380px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.2);
+    background: white;
+}
+
+/* Zig-zag */
+.card:nth-child(odd) {
+    transform: translateX(-200px);
+}
+
+.card:nth-child(even) {
+    transform: translateX(200px);
+}
+
+.card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.label {
+    padding: 12px;
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.blue {
+    background: #2b6cb0;
+}
+
+.red {
+    background: #8B0000;
+}
+
+/* LESSONS */
+.lessons {
+    background: linear-gradient(to bottom, #2b6cb0, #4a90e2);
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+}
+
+
+.lessons h2 {
+    text-align: left;
+    font-family: 'Alfa Slab One', cursive;
+    font-size: 40px;
+    margin-left: 80px;
+}
+
+
+.w-red {
+    color: #6D0101;
+}
+
+.e-blue {
+    color: #00C3D0;
+}
+.lesson-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+	font-size: 18px;
+	font-family: 'Alfa Slab One';
+}
+
+.lesson-list div {
+    width: 450px;
+    padding: 12px;
+    border-radius: 25px;
+    margin: 12px 0;
+   
+    border: 3px solid black;
+    text-align: center;
+	color: black;
+}
+
+/*  THIS CREATES THE LEFT-RIGHT EFFECT */
+.lesson-list div:nth-child(odd) {
+    transform: translateX(-60px); /* move left */
+}
+
+.lesson-list div:nth-child(even) {
+    transform: translateX(60px); /* move right */
+}
+
+
+.lesson-list .outline {
+    background: transparent;
+    border: 3px solid white;
+	 color: white;
+}
+
+/* INSTRUCTOR */
+.instructor {
+    background: #7aa6d9;
+    padding: 60px 20px;
+    text-align: center;
+	
+}
+
+.instructor h3 {
+    font-family: 'Alfa Slab One', cursive;
+	font-size: 25px;
+}
+
+.instructor h2 {
+    font-family: 'Alfa Slab One', cursive;
+	font-size: 40px;
+}
+
+.instructor-content {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.instructor img {
+    width: 320px;
+    border-radius: 20px;
+}
+
+.instructor p {
+    max-width: 500px;
+    text-align: left;
+}
+
+.i-red {
+    color: #6D0101;
+}
+
+.n-blue {
+    color: #1268A3;
+}
+.footer {
+    background: #8B0000;
+    color: white;
+    padding: 40px 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;   
+    position: relative;        
+}
+
+.contact {
+    margin-top: 20px;
+    text-align: left;
+	font-size: 20px;
+}
+
+/* Move copyright to bottom right */
+.copyright {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    text-align: right;
+}
+</style>
+<head>
+    <title>About Us</title>
+    
+</head>
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+    <img src="img/logo.png" height="50">
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html" class="active">About us</a>
+        <a href="careers.html">Careers</a>
+        <a href="contact.html">Contact us</a>
+    </div>
+</div>
+
+<!-- HERO SECTION -->
+<section class="hero">
+    <div class="hero-content">
+        <h1>What is <span>KAIROS</span> LANGUAGE INSTITUTE?</h1>
+        <h2>Master English, Unlock Possibilities</h2>
+        <p>
+            We help learners master English with confidence, opening doors to education, career,
+            and global connection.
+        </p>
+    </div>
+</section>
+
+<!-- FEATURES -->
+<section class="features">
+    
+   <h2 class="at-kairos">
+    <span class="at">AT </span>
+    <span class="k">K</span><span class="airos">AIROS </span>
+    <span class="text">WE BRING YOU:</span>
+</h2>
+			
+    <div class="cards">
+        <div class="card">
+            <img src="img/community.png">
+            <div class="label blue">Community & Connection</div>
+        </div>
+
+        <div class="card">
+            <img src="img/Accessibility.png">
+            <div class="label red">Accessibility & Flexibility</div>
+        </div>
+
+        <div class="card">
+            <img src="img/Problem_Solving.png">
+            <div class="label blue">Problem Solving</div>
+        </div>
+
+        <div class="card">
+            <img src="img/Growth.png">
+            <div class="label red">Growth & Impact</div>
+        </div>
+    </div>
+</section>
+
+<!-- LESSONS -->
+<section class="lessons">
+   <h2>
+    What 
+    <span class="w-red">w</span><span class="e-blue">e</span>
+    include in each lesson
+</h2>
+
+    <div class="lesson-list">
+        <div>Vocabulary</div>
+        <div class="outline">Pronunciation</div>
+        <div>Reading</div>
+        <div class="outline">Conversational Skills</div>
+        <div>Writing Skills</div>
+        <div class="outline">TO BE DETERMINED</div>
+    </div>
+</section>
+
+<!-- INSTRUCTOR -->
+<section class="instructor">
+   <h2>MEET THE <span class="i-red">I</span><span class="n-blue">N</span>STRUCTOR</h2>
+    <h3>SEBASTIAN JURAN RANJITH</h3>
+
+    <div class="instructor-content">
+        <img src="img/SEBASTIAN.png">
+
+        <p>
+            My name is Sebastian Juran Ranjith, and I am 26 years old. I come from the beautiful country of the United States of America, where I developed a strong passion for education, communication, and working with people from diverse backgrounds.
+
+            <br><br>
+            I am a qualified TEFL teacher with four years of teaching experience, and I am highly skilled in teaching students of all age groups, ranging from young learners as young as four years old to adults. I am passionate about creating engaging, supportive, and interactive learning environments that help students grow in confidence and language ability.
+            <br><br>
+            Throughout my teaching journey, I have become proficient in using world-class courseware such as Oxford Discover, Oxford Reading Tree, National Geographic Reader Explorers, National Geographic Kids, and National Geographic Great Writing, among many others. My experience with these resources allows me to deliver structured, high-quality lessons tailored to different learning levels and needs.
+
+            <br><br>
+            I am dedicated, patient, and adaptable, and I strive to make learning enjoyable and meaningful for every student I teach. My goal as an educator is to inspire learners, build their communication skills, and support their academic and personal development through effective and engaging English instruction.
+        </p>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<section class="footer">
+    <img src="img/bottom_logo.png" height="170">
+
+    <div class="contact">
+        <p>EMAIL: SEBASTAIN@GMAIL.COM</p>
+        <p>WHATSAPP: 0986553322</p>
+        <p>@THE_KAIROSINSTITUTE</p>
+    </div>
+
+    <p class="copyright">
+        © 2026 Kairos Language Institute | Developed & Designed
+    </p>
+</section>
+
+</body>
+</html>
